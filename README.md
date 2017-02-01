@@ -2,7 +2,7 @@
 
 A [pass](https://www.passwordstore.org/) extension that provides a convenient solution to insert a file into the store.
 
-If you are using the [forked pass](https://github.com/HacKanCuBa/password-store), then you might prefer using [pass insert](https://github.com/HacKanCuBa/pass-extension-insert) extension.
+If you are using [passh](https://github.com/HacKanCuBa/passh) - the pass fork -, then you might prefer using [passh insert](https://github.com/HacKanCuBa/passh-extension-insert) extension.
 
 ## Usage
 
@@ -10,7 +10,7 @@ If you are using the [forked pass](https://github.com/HacKanCuBa/password-store)
 Usage:
     pass insertfile [--help,-h] [--force,-f] pass-name file-path
             Insert a file into the store. Prompt before
-            overwriting existing password unless forced (--force,-f).
+            overwriting existing file unless forced (--force,-f).
 
 More information may be found in the pass-insertfile(1) man page.
 ```
@@ -27,11 +27,11 @@ Insert your ssh private key.
 
 ### Linux
 
-    git clone https://git.linuxnoblog.net/hackan/pass-insertfile/
+    git clone https://github.com/HacKanCuBa/pass-extension-insertfile.git
     cd pass-insertfile
     sudo make install
 
-Or simply copy *insertfile.bash* to the pass extension directory (~/.password-store/.extensions by default).
+Or simply copy *insertfile.bash* to the pass extension directory (~/.password-store/.extensions by default) and set it executable to enable it: `chmod +x insertfile.bash`..
 
 #### Requirements
 

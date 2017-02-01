@@ -21,7 +21,7 @@ cmd_insertfile_usage() {
 	Usage:
 	    $PROGRAM insertfile [--help,-h] [--force,-f] pass-name file-path
 	        Insert a file into the store. Prompt before
-	        overwriting existing password unless forced (--force,-f). 
+	        overwriting existing file unless forced (--force,-f). 
 	        
 	More information may be found in the pass-insertfile(1) man page.	        
 	_EOF
