@@ -1,0 +1,48 @@
+.TH pass-insertfile 1 "January 2017" "pass-insertfile"
+
+.SH NAME
+pass insertfile - A \fBpass\fP(1) extension that provides a convenient solution to
+insert a file into the store.
+
+.SH SYNOPSIS
+\fBpass insertfile\fP [\fI--help\fP,\fI-h\fP] [\fI--force\fP,\fI-f\fP] \fIpass-name\fP \fIfile-path\fP
+
+.SH DESCRIPTION
+\fBpass insertfile\fP Provides an interactive solution to insert the file \fIfile-path\fP into the store, under the name \fIpass-name\fP.
+It prompts if \fIpass-name\fP exists, unless the \fI--force\fP option is used.
+
+.SH OPTIONS
+
+.TP
+\fB\-f\fB, \-\-force\fR
+Force to insert and do not wait for user instruction.
+
+.TP
+\fB\-h\fB, \-\-help\fR
+Show usage message.
+
+.SH SEE ALSO
+.BR pass(1)
+
+
+.SH AUTHORS
+.B pass insertfile
+was written by
+.MT hackan@gmail.com
+HacKan
+.ME .
+
+
+.SH COPYING
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
