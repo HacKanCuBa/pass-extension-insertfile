@@ -23,7 +23,7 @@ cmd_insertfile_usage() {
 	        Insert a file into the store. Prompt before
 	        overwriting existing file unless forced (--force,-f). 
 	        
-	More information may be found in the pass-insertfile(1) man page.	        
+	More information may be found in the pass-insertfile(1) man page.
 	_EOF
 }
 
@@ -39,7 +39,7 @@ cmd_insertfile() {
 	
 	[[ $err -ne 0 || $# -ne 2 ]] && die "Usage: $PROGRAM $COMMAND [--help,-h] [--force,-f] pass-name file-path"
 	
-    local path="${1%/}"
+	local path="${1%/}"
 	local passfile="$PREFIX/$path.gpg"
 	check_sneaky_paths "$path"
 
@@ -47,18 +47,18 @@ cmd_insertfile() {
 
 	mkdir -p -v "$PREFIX/$(dirname "$path")"
 	set_gpg_recipients "$(dirname "$path")"
-    
-    local filepath="${2}"
-    [[ -r "${filepath}" && -L "${filepath}" ]] && yesno "The file is a symlink and it's going to be resolved. Are you sure you want that?"
 
-    if [[ -r "${filepath}" && -f "${filepath}" ]]; then
-        check_sneaky_paths "${filepath}"
-        $GPG -e "${GPG_RECIPIENT_ARGS[@]}" -o "$passfile" "${GPG_OPTS[@]}" "${filepath}" || die "File encryption aborted."
-    else
-        die "File ${filepath} is not valid."
-    fi
-    
-    git_add_file "$passfile" "Add given file for $path to store."
+	local filepath="${2}"
+	[[ -r "${filepath}" && -L "${filepath}" ]] && yesno "The file is a symlink and it's going to be resolved. Are you sure you want that?"
+
+	if [[ -r "${filepath}" && -f "${filepath}" ]]; then
+		check_sneaky_paths "${filepath}"
+		$GPG -e "${GPG_RECIPIENT_ARGS[@]}" -o "$passfile" "${GPG_OPTS[@]}" "${filepath}" || die "File encryption aborted."
+	else
+		die "File ${filepath} is not valid."
+	fi
+	
+	git_add_file "$passfile" "Add given file for $path to store."
 }
 
 [[ "$1" == "help" || "$1" == "--help" || "$1" == "-h" ]] && cmd_insertfile_usage && exit 0
